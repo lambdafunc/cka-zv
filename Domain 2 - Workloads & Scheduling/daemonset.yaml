@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: pinelabs-daemonset
+spec:
+  selector:
+    matchLabels:
+      name: pinelabs-all-pods
+  template:
+    metadata:
+      labels:
+        name: pinelabs-all-pods
+    spec:
+      containers:
+      - name: pinelabs-pods
+        image: nginx
